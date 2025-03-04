@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { Component, input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
