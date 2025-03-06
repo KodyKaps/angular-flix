@@ -6,6 +6,6 @@ import { UserRegistrationComponent } from './pages/user-registration/user-regist
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'movies', component: MoviesComponent},
-    {path: 'user-registration', component: UserRegistrationComponent},
+    // {path: 'user-registration', component: UserRegistrationComponent},
     {path: '*', redirectTo: '/login'}
 ];
