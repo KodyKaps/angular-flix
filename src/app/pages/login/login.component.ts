@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MovieApiService } from '../../../movie-api.service';
 import { MATERIAL_IMPORTS } from '../../material.imports';
 
+
 @Component({
   selector: 'app-login',
   imports: [MATERIAL_IMPORTS],
