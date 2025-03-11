@@ -6,6 +6,7 @@ import { UserRegistrationComponent } from './pages/user-registration/user-regist
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from './pages/login/login.component';
 import { MATERIAL_IMPORTS } from './material.imports';
+import { MovieCardComponent } from './movie-card/movie-card.component';
 
 
 @Component({
@@ -32,6 +33,12 @@ export class AppComponent {
     this.dialog.open(LoginComponent, {
       // Assigning the dialog a width
       width: '280px'
+    });
+  }
+
+  openMoviesDialog(): void {
+    this.dialog.open(MovieCardComponent, {
+      width: '500px'
     });
   }
 }
