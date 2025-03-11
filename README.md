@@ -1,5 +1,5 @@
 # AngularFlix
-
+- website is hosted on [vercel](https://angular-flix-c3h6jyy95-kodys-projects-1512eae7.vercel.app/) 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
 
 ## Development server

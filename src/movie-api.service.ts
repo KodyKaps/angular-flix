@@ -32,7 +32,8 @@ export class MovieApiService {
   }
   // Get all movies
   public getMovies(): Observable<any> {
-    return this.http.get(apiUrl + 'movies').pipe(
+    let token = this.getToken();
+    return this.http.get(apiUrl + 'movies', this.getHeader(token)).pipe(
       catchError(this.handleError)
     );
   }
@@ -104,5 +105,13 @@ export class MovieApiService {
         `Error body is: ${error.error}`);
     }
     return throwError('Something bad happened; please try again later.');
+  }
+
+  private getToken(): any {
+    var t = localStorage.getItem('token')
+    return JSON.parse(t!);
+  }
+  private getHeader(token: any): any {
+    return {headers: {Authorization: `Bearer ${token}`} }
   }
 }

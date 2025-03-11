@@ -1,15 +1,16 @@
 // src/app/movie-card/movie-card.component.ts
 import { Component, OnInit } from '@angular/core';
-import { MovieApiService } from '../../movie-api.service';
-import { MATERIAL_IMPORTS } from '../material.imports';
+import { MovieApiService } from '../../../movie-api.service';
+import { MATERIAL_IMPORTS } from '../../material.imports';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-movie-card',
-  imports: [MATERIAL_IMPORTS],
+  imports: [MATERIAL_IMPORTS, CommonModule],
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss']
 })
