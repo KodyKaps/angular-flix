@@ -4,15 +4,20 @@ import { MovieCardComponent } from '../../components/movie-card/movie-card.compo
 import { LoginComponent } from '../login/login.component';
 import { UserRegistrationComponent } from '../user-registration/user-registration.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { MATERIAL_IMPORTS } from '../../material.imports';
 
 @Component({
   selector: 'app-welcome-page',
-  imports: [CommonModule],
+  imports: [MATERIAL_IMPORTS, CommonModule],
   templateUrl: './welcome-page.component.html',
   styleUrl: './welcome-page.component.css'
 })
 export class WelcomePageComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router
+  ) { }
   // This is the function that will open the dialog when the signup button is clicked  
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationComponent, {
@@ -28,9 +33,7 @@ export class WelcomePageComponent {
     });
   }
 
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '500px'
-    });
+  goToMovies(): void{
+    this.router.navigate(['/movies'])
   }
 }

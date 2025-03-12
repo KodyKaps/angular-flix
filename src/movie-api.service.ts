@@ -32,8 +32,7 @@ export class MovieApiService {
   }
   // Get all movies
   public getMovies(): Observable<any> {
-    let token = this.getToken();
-    return this.http.get(apiUrl + 'movies', this.getHeader(token)).pipe(
+    return this.http.get(apiUrl + 'movies', this.getDefaultHeaders()).pipe(
       catchError(this.handleError)
     );
   }
@@ -70,21 +69,21 @@ export class MovieApiService {
   // Add a movie to favourite Movies
   public addFavoriteMovie(userId: any, movie: any): Observable<any> {
     console.log(userId, movie);
-    return this.http.post(apiUrl + `users/${userId}/favorite-movies`, movie).pipe(
+    return this.http.post(apiUrl + `users/${userId}/favorite-movies`, movie, this.getDefaultHeaders()).pipe(
       catchError(this.handleError)
     );
   }
   // Edit user
   public updateUser(userId: any, user: any): Observable<any> {
     console.log(userId, user);
-    return this.http.put(apiUrl + `users/${userId}`, user).pipe(
+    return this.http.put(apiUrl + `users/${userId}`, user,this.getDefaultHeaders()).pipe(
       catchError(this.handleError)
     );
   }
   // Delete user
-  public deleteUser(userId: any, user: any): Observable<any> {
-    console.log(userId, user);
-    return this.http.delete(apiUrl + `users/${userId}`, user).pipe(
+  public deleteUser(userId: any): Observable<any> {
+    console.log('delete', userId);
+    return this.http.delete(apiUrl + `users/${userId}`,this.getDefaultHeaders()).pipe(
       catchError(this.handleError)
     );
   }
@@ -111,7 +110,8 @@ export class MovieApiService {
     var t = localStorage.getItem('token')
     return JSON.parse(t!);
   }
-  private getHeader(token: any): any {
+  private getDefaultHeaders(): any {
+    let token = this.getToken()
     return {headers: {Authorization: `Bearer ${token}`} }
   }
 }
