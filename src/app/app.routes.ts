@@ -10,7 +10,7 @@ export const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'profile', component: ProfilePageComponent},
     {path: 'movies', component: MoviesPage},
-    // {path: 'user-registration', component: UserRegistrationComponent},
+    /** {path: 'user-registration', component: UserRegistrationComponent},*/
     {path: '*', redirectTo: '/login'},
     {path: '', redirectTo:'welcome', pathMatch: 'prefix'}
 ];

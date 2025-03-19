@@ -14,11 +14,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent  implements OnInit {
 
-  //input into the component, from the parent, similar to React Props
+  /**input into the component, from the parent, similar to React Props*/
   @Input() userData = { Username: '', Password: '' };
 
-  //immediately called when component is created
-  //In angular -> to inject dependencies
+  /**immediately called when component is created*/
+  /**In angular -> to inject dependencies*/
   constructor(
     public movieApiService: MovieApiService,
     public dialogRef: MatDialogRef<LoginComponent>,
@@ -27,13 +27,13 @@ export class LoginComponent  implements OnInit {
   ){}
 
   ngOnInit(): void {
-    //called after component data is bound
+    /**called after component data is bound*/
   }
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**This is the function responsible for sending the form inputs to the backend*/
   loginUser(): void {
     this.movieApiService.userLogin(this.userData).subscribe((result) => {
-      //store token in localstorage
+      /**store token in localstorage*/
       localStorage.setItem('user', JSON.stringify(result.user))
       localStorage.setItem('token', JSON.stringify(result.token))
       this.dialogRef.close(); // This will close the modal on success!

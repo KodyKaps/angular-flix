@@ -9,7 +9,7 @@ import { MATERIAL_IMPORTS } from '../../material.imports';
   styleUrl: './generic-dialog.component.css'
 })
 
-//Allow dialogs to accept data in the movie card component
+/**Allow dialogs to accept data in the movie card component*/
 export class GenericDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 }

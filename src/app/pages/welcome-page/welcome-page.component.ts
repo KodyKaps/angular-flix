@@ -18,17 +18,17 @@ export class WelcomePageComponent {
     public dialog: MatDialog,
     private router: Router
   ) { }
-  // This is the function that will open the dialog when the signup button is clicked  
+  /**This is the function that will open the dialog when the signup button is clicked*/  
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationComponent, {
-      // Assigning the dialog a width
+      /**  Assigning the dialog a width*/
       width: '280px'
     });
   }
 
   openLoginDialog(): void {
     this.dialog.open(LoginComponent, {
-      // Assigning the dialog a width
+      /**Assigning the dialog a width*/
       width: '280px'
     });
   }
